@@ -22,8 +22,15 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
-  <<: *default
-  database: artbyheartbangkok_development
+  # <<: *default
+  # database: artbyheartbangkok_development
+  adapter: postgresql
+  encoding: utf8
+  database: dfa04rheo50nsa
+  pool: 5
+  username: qczuwddbhuyiwf    #-> *** data from heroku's postgres user details page
+  password: puFectTS-wTNTBG6F1MPLD8wzu
+  host: ec2-23-21-71-9.compute-1.amazonaws.com
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -84,13 +91,13 @@ test:
 #   username: artbyheartbangkok
 #   password: <%= ENV['ARTBYHEARTBANGKOK_DATABASE_PASSWORD'] %>
 # production:
-#   adapter: postgresql
-#   encoding: utf8
-#   database: dfa04rheo50nsa
-#   pool: 5
-#   username: qczuwddbhuyiwf    #-> *** data from heroku's postgres user details page
-#   password: puFectTS-wTNTBG6F1MPLD8wzu
-#   host: ec2-23-21-71-9.compute-1.amazonaws.com
-production:
-   adapter: postgresql
-   prepared_statements: false
+  adapter: postgresql
+  encoding: utf8
+  database: dfa04rheo50nsa
+  pool: 5
+  username: qczuwddbhuyiwf    #-> *** data from heroku's postgres user details page
+  password: puFectTS-wTNTBG6F1MPLD8wzu
+  host: ec2-23-21-71-9.compute-1.amazonaws.com
+# production:
+#    adapter: postgresql
+#    prepared_statements: false
