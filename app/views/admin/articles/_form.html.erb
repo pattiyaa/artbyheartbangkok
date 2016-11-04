@@ -1,0 +1,37 @@
+
+<div class="wrapper style1">
+
+    <%= simple_form_for(@admin_article) do |f| %>
+    <%= f.error_notification %>
+
+      
+       <div class="form-inputs">
+          <div class="form-group">
+
+           <%= f.input :coverphoto_url %>
+           <%=cl_image_tag( f.object.coverphoto_url ,:width => 1028, :height => 400, :crop => :fill,:class=>"img-responsive center-block" )%>
+          </div>
+          <div class="form-group">
+            <%= f.input :title, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.input :subtitle, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.input :body, :as => :ckeditor, input_html: {:ckeditor => {:toolbar => 'FULL'}}, class: "form-control" %>
+          </div>
+          <%= f.input :createdate %>
+         <%= f.input :modifydate %>
+         
+         <%= f.input :category %>
+         <%= f.input :isHighlight %>
+         <%= f.input :isToplist %>
+       </div>
+       <div class="row form-actions">
+         <%= f.button :submit , :class=>"pull-right"%>
+        
+       </div>
+    <% end %>
+
+</div>
+

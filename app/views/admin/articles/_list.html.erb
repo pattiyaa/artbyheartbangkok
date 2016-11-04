@@ -1,0 +1,46 @@
+
+<div >
+  <div class = "row">
+    <div class="col-xs-4"><h2>Admin Articles</h2> </div>
+    <div class="col-xs-8 pull-left"> 
+      <%= link_to new_admin_article_path do %>
+      <i class="fa fa fa-plus-circle fa-3x" aria-hidden="true"></i>
+      <% end %>
+    </div>
+
+  </div>
+
+  <% @admin_articles.each do |admin_article| %>
+  <div class="row 200%">
+    <div class="4u 12u(mobile)">
+      <a href="#" class="image fit">
+        <%=cl_image_tag( admin_article.coverphoto_url ,:width => 350, :height => 200, :crop => :fill,:class=>"img-responsive center-block" )%>
+      </a>
+    </div>
+    <div class="7u 12u(mobile)">
+      <div class="row">
+        <div class="col-xs-10">
+          <h4><%= link_to admin_article do %>
+           <%=admin_article.title%>
+           <% end %></h4>
+           <p>
+            <%=admin_article.subtitle%>
+          </p>
+        </div>
+        <div class="col-xs-2">
+          <%= link_to edit_admin_article_path(admin_article) do %>
+          <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+          <% end %>
+
+          <%= link_to admin_article, method: :delete, data: { confirm: 'Are you sure?' }  do %>
+          <i class="fa fa fa-eraser" aria-hidden="true"></i>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+
+</div>
+
+

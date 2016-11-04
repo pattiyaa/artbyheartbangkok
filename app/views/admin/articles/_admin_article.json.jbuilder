@@ -1,0 +1,2 @@
+json.extract! admin_article, :id, :title,subtitle, :body, :createdate, :modifydate, :coverphoto_url, :category, :isHighlight, :isToplist, :created_at, :updated_at
+json.url admin_article_url(admin_article, format: :json)

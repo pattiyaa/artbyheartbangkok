@@ -1,0 +1,15 @@
+<div class="page-wrapper">
+ 	<%= render :template=> '/admin/menu'%>
+ 	<div >
+	 	<h2>Show Admin Article</h2>
+		<%= render 'show', admin_article: @admin_article %>
+		<article class="action">
+		  <div class="pull-right">
+		    <%= link_to 'Edit', edit_admin_article_path(@admin_article)%> |
+		    <%= link_to 'Back', admin_articles_path %> 
+		  </div>
+		</article>
+	</div>
+	<%= render :template=> '/admin/footer'%>
+</div>
+

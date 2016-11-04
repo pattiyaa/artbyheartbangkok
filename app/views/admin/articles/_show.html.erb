@@ -1,0 +1,25 @@
+<article  class="special">
+  <!-- article header -->
+  <section>
+     <!-- cover image -->
+     <%=cl_image_tag( @admin_article.coverphoto_url ,:width => 1024, :height => 450, :crop => :fill,:class=>"img-responsive center-block" )%>
+     <header class="wrapper">
+      <div class="row">
+        <p class="pull-left"><%= @admin_article.category %></p>
+        <p class="pull-right"><%= @admin_article.modifydate %></p>
+      </div>
+      <div class="row">
+        <h2><%= @admin_article.title %></h2>
+        <p>
+          <%= @admin_article.subtitle %>
+        </p>
+      </div>
+    </header>
+  </section>
+  <!-- article body -->
+  <section class="body">
+    <%= @admin_article.body.html_safe %>
+  </section>
+
+</br>
+</article>

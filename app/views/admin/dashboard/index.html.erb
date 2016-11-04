@@ -1,0 +1,16 @@
+<div class="page-wrapper ">
+  <%= render :template=> '/admin/menu'%>
+
+  <div class="wrapper">
+    <div class="row 200%">
+          
+	    <div id="users" class="4u 12u(mobile)">
+		<%= render :template => '/admin/users/show', admin_user: @admin_user %>
+		</div>
+		<div id="articles" class="8u 12u(mobile)">
+		  <%= render :template => '/admin/articles/_list',admin_articles: @admin_articles %>
+		</div>
+	</div>
+  </div>
+  <%= render :template=> '/admin/footer'%>
+</div>

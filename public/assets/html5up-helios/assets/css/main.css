@@ -1628,6 +1628,7 @@
 		a:hover {
 			color: #ef8376;
 			border-bottom-color: transparent;
+			background-color:transparent;
 		}
 
 	sub {
@@ -2100,7 +2101,8 @@
 		background-size: cover;
 		background-position: center center;
 		background-attachment: fixed;
-		color: #fff;
+		/*color: #fff;*/
+		color: #000;
 		text-align: center;
 		padding: 7.5em 0 2em 0;
 		cursor: default;
@@ -2177,7 +2179,8 @@
 
 		body.homepage #header:after {
 			content: '';
-			background: #1C0920;
+			/*background: #1C0920;*/
+			background: #EAF390;
 			display: block;
 			position: absolute;
 			left: 0;
