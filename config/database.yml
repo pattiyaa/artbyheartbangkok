@@ -90,7 +90,7 @@ test:
 #   database: artbyheartbangkok_production
 #   username: artbyheartbangkok
 #   password: <%= ENV['ARTBYHEARTBANGKOK_DATABASE_PASSWORD'] %>
-# production:
+production:
   adapter: postgresql
   encoding: utf8
   database: dfa04rheo50nsa
