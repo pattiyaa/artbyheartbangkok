@@ -55,4 +55,9 @@ Ckeditor.setup do |config|
   # Used when CKEditor CDN enabled
   # By default: "/assets/ckeditor/config.js"
   # config.js_config_url = "/assets/ckeditor/config.js"
+
+  config.cdn_url = "//cdn.ckeditor.com/4.5.11/standard/ckeditor.js"
+  config.assets_languages = ['en', 'th']
+  config.assets_plugins = ['image', 'smiley']
+
 end
