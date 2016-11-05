@@ -70,6 +70,8 @@ GEM
       execjs
     coffee-script-source (1.10.0)
     concurrent-ruby (1.0.2)
+    datagrid (1.5.1)
+      rails (>= 3.2.22.2)
     debug_inspector (0.0.2)
     domain_name (0.5.20161021)
       unf (>= 0.0.5, < 1.0.0)
@@ -193,6 +195,7 @@ DEPENDENCIES
   ckeditor (~> 4.1)
   cloudinary
   coffee-rails (~> 4.2)
+  datagrid
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)

@@ -54,5 +54,5 @@ gem 'cloudinary'
 gem 'simple_form', '~> 3.2'
 gem 'ckeditor', '~> 4.1'
 #for admin : paged tables that can be sorted on selected fields
-# gem 'datagrid'
+gem 'datagrid'
 # gem 'kaminari'
