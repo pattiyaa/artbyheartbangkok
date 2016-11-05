@@ -53,6 +53,8 @@ gem 'cloudinary'
 #for blog editor
 gem 'simple_form', '~> 3.2'
 gem 'ckeditor', '~> 4.1'
+gem 'carrierwave'
+gem 'mini_magick'
 #for admin : paged tables that can be sorted on selected fields
 gem 'datagrid'
 gem 'kaminari'
