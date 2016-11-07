@@ -6,5 +6,5 @@ class Admin::Photo < ApplicationRecord
   validates_presence_of :title, :image
  
 
-  belongs_to :imageable, :polymorphic => true
+  #belongs_to :imageable, :polymorphic => true
 end

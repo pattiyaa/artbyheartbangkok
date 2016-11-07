@@ -1,5 +1,13 @@
-<div id="logo">
-	<span class="image avatar48"><img src="images/avatar.jpg" alt="" /></span>
-    <h1 id="title"><%= @admin_user.email %></h1>
-    <p>test test</p>
+<div class="top">
+	<div id="logo">
+		<span class="image avatar48">
+			<%= cl_image_tag(@admin_user_photo.image,:transformation=>[
+				  {:width=>200, :height=>200, :gravity=>"face", :radius=>"max", :crop=>"crop", :background => "#222629" },
+				  {:width=>200}
+				  ]) %>
+		</span>
+
+	    <p id="title"><%= @admin_user.email %></p>
+	    <p><%=@admin_user.password%></p>
+	</div>
 </div>

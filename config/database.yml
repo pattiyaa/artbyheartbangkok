@@ -63,8 +63,15 @@ development:
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
-  <<: *default
-  database: artbyheartbangkok_test
+  # <<: *default
+  # database: artbyheartbangkok_test
+  adapter: postgresql
+  encoding: utf8
+  database: dfa04rheo50nsa
+  pool: 5432
+  username: qczuwddbhuyiwf    #-> *** data from heroku's postgres user details page
+  password: puFectTS-wTNTBG6F1MPLD8wzu
+  host: ec2-23-21-71-9.compute-1.amazonaws.com
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is

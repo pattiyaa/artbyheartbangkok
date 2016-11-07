@@ -8,7 +8,8 @@
               <p>Hyperspace Engineer</p>
             </div> -->
             <div id="users" class="4u 12u(mobile)">
-            <%= render :template => '/admin/users/show_name' ,  :locals => { :admin_user=> @admin_user} %>
+            <%= render :template => '/admin/users/show_name' ,  :locals => { :admin_user=> @admin_user, :admin_user_photo=> @admin_user_photo} %>
+            
             </div>
           <!-- Nav -->
             <nav id="nav">

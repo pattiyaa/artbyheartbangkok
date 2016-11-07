@@ -29,6 +29,8 @@ class Admin::PhotosController < ApplicationController
 
   def create
     @photo = Admin::Photo.new(photo_params)
+    # @photo.imageable_id = 1
+    # @photo.imageable_type = "user"
     # In through-the-server mode, the image is first uploaded to the Rails server.
     # When @photo is saved, Carrierwave uploads the image to Cloudinary.
     # The upload metadata (e.g. image size) is then available in the
@@ -68,8 +70,6 @@ class Admin::PhotosController < ApplicationController
   def view_for_new
     direct_upload_mode? ? "new_direct" : "new"
   end
-
-  private
   def photo_params
     params.require(:admin_photo).permit(:title, :bytes, :image, :image_cache)
     
