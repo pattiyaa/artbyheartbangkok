@@ -50,6 +50,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'carrierwave'
 gem 'cloudinary'
+
 #for blog editor
 gem 'simple_form', '~> 3.2'
 gem 'ckeditor', '~> 4.1'
@@ -60,3 +61,4 @@ gem 'datagrid'
 gem 'kaminari'
 gem 'activesupport', '~> 5.0', '>= 5.0.0.1'
 gem 'sass-rails'
+gem 'sprockets-rails'

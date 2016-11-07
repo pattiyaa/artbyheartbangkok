@@ -5,7 +5,7 @@ class CreateAdminUsers < ActiveRecord::Migration[5.0]
       t.string :password
       t.datetime :createdate
       t.datetime :modifydate
-
+      
       t.timestamps
     end
   end

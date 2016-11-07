@@ -10,8 +10,10 @@ class Admin::UsersController < ApplicationController
   # GET /admin/users/1
   # GET /admin/users/1.json
   def show
+    render view_for_user
   end
 
+ 
   # GET /admin/users/new
   def new
     @admin_user = Admin::User.new
@@ -71,4 +73,11 @@ class Admin::UsersController < ApplicationController
     def admin_user_params
       params.require(:admin_user).permit(:email, :password, :createdate, :modifydate)
     end
+  protected
+  def show_user_name_mode
+    params[:showname].present?
+  end
+  def view_for_user
+    show_user_name_mode ? "show_name" : "show"
+  end
 end

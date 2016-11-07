@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Art by Heart Bangkok : Admin</title>
+     <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag 'favicon.ico' %>
+    <%=javascript_include_tag Ckeditor.cdn_url %>
+    	<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="/assets/html5up-prologue/assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="/assets/html5up-prologue/assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="/assets/html5up-prologue/assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="/assets/html5up-prologue/assets/css/ie9.css" /><![endif]-->
+
+  </head>
+  <body>
+    <%= render :template=> '/admin/menu'%>
+    <div id="main">
+      <%= yield %>
+    </div>
+  </body>
+</html>

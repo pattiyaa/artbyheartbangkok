@@ -1,16 +1,38 @@
-<div id="header" class="wrapper">
-  <div class="inner">
-    <header>
-      <h1><a href="home/index" id="logo">Art by Heart</a></h1>
-    </header>
-  </div>
-  <nav id="nav">
-    <ul>
-      <li><a href="/admin">Admin</a></li>
-      <li><a href="/admin/users">User</a>
-      <li><a href="/admin/articles">Articles</a>
-      <li><a href="/admin/therapists">Therapist</a></li>
-      <li><a href="/admin/products">Products</a></li>
-      <li><a href="/">Live website</a></li>
-  </nav>
-</div>
+
+<div id="header">
+        <div class="top">
+          <!-- Logo -->
+     <!--        <div id="logo">
+              <span class="image avatar48"><img src="images/avatar.jpg" alt="" /></span>
+              <h1 id="title">Jane Doe</h1>
+              <p>Hyperspace Engineer</p>
+            </div> -->
+            <div id="users" class="4u 12u(mobile)">
+            <%= render :template => '/admin/users/show_name' ,  :locals => { :admin_user=> @admin_user} %>
+            </div>
+          <!-- Nav -->
+            <nav id="nav">
+              <!--
+
+                Prologue's nav expects links in one of two formats:
+
+                1. Hash link (scrolls to a different section within the page)
+
+                   <li><a href="#foobar" id="foobar-link" class="icon fa-whatever-icon-you-want skel-layers-ignoreHref"><span class="label">Foobar</span></a></li>
+
+                2. Standard link (sends the user to another page/site)
+
+                   <li><a href="http://foobar.tld" id="foobar-link" class="icon fa-whatever-icon-you-want"><span class="label">Foobar</span></a></li>
+
+              -->
+              <ul>
+                <li><a href="/admin" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Dashboard</span></a></li>
+                <li><a href="/admin/users" id="user-link" class="skel-layers-ignoreHref"><span class="icon fa-user">User</span></a></li>
+                <li><a href="/admin/articles" id="article-link" class="skel-layers-ignoreHref"><span class="icon fa-pencil-square-o">articles</span></a></li>
+                <li><a href="/admin/products" id="product-link" class="skel-layers-ignoreHref"><span class="icon fa fa-shopping-bag">Products</span></a></li>
+                <li><a href="/" id="live-link" class="skel-layers-ignoreHref"><span class="icon fa-globe">Live website</span></a></li>
+              </ul>
+            </nav>
+
+        </div>
+    </div>

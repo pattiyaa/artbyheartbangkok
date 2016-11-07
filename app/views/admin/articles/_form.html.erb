@@ -1,4 +1,3 @@
-
 <div class="wrapper style1">
 
     <%= simple_form_for(@admin_article) do |f| %>
@@ -7,8 +6,17 @@
       
        <div class="form-inputs">
           <div class="form-group">
+           <div class="row"> 
+            <div class="col-xs-8">
+              <%= f.input :coverphoto_url %>
+            </div>
+            <div class="col-xs-4">
+             <!-- cloudinary wiget -->
+             <a href="#" id="upload_widget_opener">Upload images</a>
 
-           <%= f.input :coverphoto_url %>
+  
+            </div>
+           </div>
            <%=cl_image_tag( f.object.coverphoto_url ,:width => 1028, :height => 400, :crop => :fill,:class=>"img-responsive center-block" )%>
           </div>
           <div class="form-group">
@@ -34,4 +42,38 @@
     <% end %>
 
 </div>
+<script src="http://widget.cloudinary.com/global/all.js" type="text/javascript"></script> 
+<script src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script> 
+<script type="text/javascript">  
+    cloudinary.setCloudName('hkjfomy96');
+      var generateSignature = function(callback, params_to_sign){
+      $.ajax({
+        url     : 'cloudinary://178961294596355:NClL35aexhvOdW-Q45W2-R-VDQ8@hkjfomy96',
+        type    : "GET",
+        dataType: "text",
+        data    : { data: params_to_sign},
+        complete: function() {console.log("complete")},
+        success : function(signature, textStatus, xhr) { callback(signature); },
+        error   : function(xhr, status, error) { console.log(xhr, status, error); }
+        });
+      };
+       
+
+        function(error, result) { console.log(error, result) })
+  document.getElementById("upload_widget_opener").addEventListener("click", function() {
+
+     cloudinary.openUploadWidget(
+        { cloud_name: 'hkjfomy96', api_key: '178961294596355',
+          cropping: 'server', upload_signature: generateSignature},
+
+        function(error, result) { console.log(error, result) });
+
+  });
+</script>
+
+cloudinary.openUploadWidget({ cloud_name: 'hkjfomy96', upload_preset: 'e3rkjrmj',public_id: ""}, 
+    function(error, result) {  console.log(error, result)  });
+
+
+
 
