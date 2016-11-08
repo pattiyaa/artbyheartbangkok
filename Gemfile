@@ -9,7 +9,7 @@ gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
 gem 'bootstrap-sass', '~>3.2.0'
-gem 'bootstrap'
+gem 'bootstrap', '~> 4.0.0.alpha5'
 gem 'autoprefixer-rails'
 # gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
