@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161107064814) do
+ActiveRecord::Schema.define(version: 20161108104216) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,8 +35,9 @@ ActiveRecord::Schema.define(version: 20161107064814) do
     t.integer  "bytes"
     t.string   "imageable_type"
     t.integer  "imageable_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["imageable_type", "imageable_id"], name: "index_admin_photos_on_imageable_type_and_imageable_id", using: :btree
   end
 
   create_table "admin_users", force: :cascade do |t|
@@ -46,6 +47,9 @@ ActiveRecord::Schema.define(version: 20161107064814) do
     t.datetime "modifydate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "name"
+    t.string   "title"
+    t.string   "role"
   end
 
   create_table "ckeditor_assets", force: :cascade do |t|

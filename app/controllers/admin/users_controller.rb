@@ -1,26 +1,36 @@
 class Admin::UsersController < ApplicationController
+  layout "admin"
   before_action :set_admin_user, only: [:show, :edit, :update, :destroy]
 
   # GET /admin/users
   # GET /admin/users.json
   def index
+    login
     @admin_users = Admin::User.all
+    @admin_users.each do |user|
+     user.photo = Admin::Photo.find_by( imageable_id: user.id,imageable_type: "user")
+    end
   end
 
   # GET /admin/users/1
   # GET /admin/users/1.json
   def show
+    login
     render view_for_user
   end
 
  
   # GET /admin/users/new
   def new
+    login
     @admin_user = Admin::User.new
   end
 
   # GET /admin/users/1/edit
   def edit
+    login
+    @admin_user.photo = Admin::Photo.find_by( imageable_id: @admin_user.id,imageable_type: "user")
+
   end
 
   # POST /admin/users
@@ -43,6 +53,7 @@ class Admin::UsersController < ApplicationController
   # PATCH/PUT /admin/users/1.json
   def update
     respond_to do |format|
+      @admin_user.modifydate = Time.now
       if @admin_user.update(admin_user_params)
         format.html { redirect_to @admin_user, notice: 'User was successfully updated.' }
         format.json { render :show, status: :ok, location: @admin_user }
@@ -71,7 +82,7 @@ class Admin::UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def admin_user_params
-      params.require(:admin_user).permit(:email, :password, :createdate, :modifydate)
+      params.require(:admin_user).permit(:email, :password,:name,:title,:role, :createdate, :modifydate)
     end
   protected
   def show_user_name_mode

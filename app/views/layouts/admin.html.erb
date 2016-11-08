@@ -16,10 +16,16 @@
 		<!--[if lte IE 9]><link rel="stylesheet" href="/assets/html5up-prologue/assets/css/ie9.css" /><![endif]-->
 
   </head>
-  <body>
+  <body class="admin">
     <%= render :template=> '/admin/menu' %>
     <div id="main">
+    <!-- <div id="header" ></div> -->
+    
+    <div  >
       <%= yield %>
     </div>
+    </div>
+    <%= render :template=> '/admin/footer' %>
   </body>
+  <div id="modal-holder"></div>
 </html>

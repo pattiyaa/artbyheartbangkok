@@ -1,33 +1,47 @@
+<div class="breadcrumb">
+  <h3 class="title pull-left">Admin >> Users </h3>
+  &nbsp;
+  <%= link_to new_admin_user_path do %>
+    <i class="fa fa fa-plus-circle" aria-hidden="true"></i>
+  <% end %>
+</div>
 <p id="notice"><%= notice %></p>
 
-<h1>Admin Users</h1>
+<div class="body">
+  <% @admin_users.each do |admin_user| %>
+  <div class="row 200%">
+    <div class="4u 12u(mobile)">
+     <% unless admin_user.photo.blank? %>
+      <a href="#" class="image fit">
+        <%= image_tag( admin_user.photo.image.url, :class => "img-circle user-photo" )%>
+      </a>
+      <%end%>
+    </div>
+    <div class="7u 12u(mobile)">
+      <div class="row">
+        <div class="col-xs-10">
+          <h4><%= link_to admin_user do %>
+           <%=admin_user.name%>
+           <% end %></h4>
+           <p>
+            <%=admin_user.title%>
+          </p>
+        </div>
+        <div class="col-xs-2">
+          <%= link_to edit_admin_user_path(admin_user) do %>
+          <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+          <% end %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Email</th>
-      <th>Password</th>
-      <th>Createdate</th>
-      <th>Modifydate</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+          <%= link_to admin_user, method: :delete, data: { confirm: 'Are you sure?' }  do %>
+          <i class="fa fa fa-eraser" aria-hidden="true"></i>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
 
-  <tbody>
-    <% @admin_users.each do |admin_user| %>
-      <tr>
-        <td><%= admin_user.email %></td>
-        <td><%= admin_user.password %></td>
-        <td><%= admin_user.createdate %></td>
-        <td><%= admin_user.modifydate %></td>
-        <td><%= link_to 'Show', admin_user %></td>
-        <td><%= link_to 'Edit', edit_admin_user_path(admin_user) %></td>
-        <td><%= link_to 'Destroy', admin_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+</div>
+</div>
 
-<br>
 
-<%= link_to 'New Admin User', new_admin_user_path %>

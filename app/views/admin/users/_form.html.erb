@@ -2,10 +2,42 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :email %>
-    <%= f.input :password %>
-    <%= f.input :createdate %>
-    <%= f.input :modifydate %>
+    <fieldset>
+    <legend>Login info</legend>
+      <%= f.input :email %>
+      <%= f.input :password %>
+    </fieldset>
+    <fieldset>
+    <legend>User info</legend>
+      <%= f.input :name %>
+      <%= f.input :title %>
+      <%= f.input :role %>
+      <% if @admin_user.photo.blank? %>
+        <%= link_to 'Update photo', admin_photos_path(:img_id => f.object.id, :img_type => 'user',:redirectturl=> edit_admin_user_path(admin_user)), :class=>'form-actions',data: { modal: true }%>
+      <% end %>
+      <%= f.fields_for :photo do |ff| %>
+        <div class="form-group string optional admin_user_photo">
+          <label class="control-label string optional" for="admin_user_photo">Photo</label>
+          <div class="row">
+            <div class="col-xs-col6">
+                  <%= image_tag( ff.object.image.url, :class => "img-circle user-photo" )%>
+                <h1><%=ff.object.title %></h1>
+              </div>
+              <div class="col-xs-col6">
+                <%= link_to 'Update photo', admin_photos_path(:img_id => f.object.id, :img_type => 'user',:redirectturl=> edit_admin_user_path(admin_user)), :class=>'form-actions',data: { modal: true }%>
+                
+                <%= ff.hidden_field(:title) %>
+                <%= ff.hidden_field(:image) %>
+     
+              </div>
+          </div>
+        </div>
+       <%end%>
+      
+
+      <%= f.hidden_field :createdate %>
+      <%= f.hidden_field :modifydate %>
+    </fieldset>
   </div>
 
   <div class="form-actions pull-right">

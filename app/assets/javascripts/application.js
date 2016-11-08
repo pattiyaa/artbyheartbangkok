@@ -15,9 +15,13 @@
 //= require turbolinks
 //= require ckeditor/init
 //= require jquery
-//= require jquery.turbolinks // Optional - turbolinks support (add = to enable)
+ 
 //= require jquery_ujs
 //= require cloudinary
-//= require cloudinary/processing // Optional - client side processing (resizing and validation)
+// Optional - client side processing (resizing and validation)
+//= require cloudinary/processing 
 //= require_tree .
-//= require turbolinks // Optional - turbolinks support (add = to enable)
+// Optional - turbolinks support (add = to enable)
+//= require turbolinks 
+//= require modals
+//= require bootstrap

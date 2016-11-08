@@ -5,7 +5,9 @@ class Admin::ArticlesController < ApplicationController
   # GET /admin/articles
   # GET /admin/articles.json
   def index
+    login
     @admin_articles = Admin::Article.all
+
   end
 
   # GET /admin/articles/1

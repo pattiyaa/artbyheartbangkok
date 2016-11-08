@@ -1,0 +1,64 @@
+.admin .body{
+	padding: 0px 25px 25px 25px;
+    
+}
+.admin .body ,.admin .body input, textarea, select {
+    font-size: 16px;
+
+}
+.admin #header{
+	position: relative;
+    background-image: url(/images/header.jpg);
+    background-size: 1024px 250px;
+    background-position: center;
+    background-attachment: fixed;
+    /* color: #fff; */
+    color: #000;
+    text-align: center;
+    padding: 7.5em 0 2em 0;
+    cursor: default;
+}
+.admin .title{
+	font-size: 1em;
+	font-weight: bold;
+}
+.admin a{
+	border-bottom: 0px;
+}
+.admin a:hover{
+	background-color:transparent;
+}
+.admin fieldset { 
+    display: block;
+    margin-left: 2px;
+    margin-right: 2px;
+    padding-top: 0.35em;
+    padding-bottom: 0.625em;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+    border: 2px groove;
+}
+.modal-content .modal-body{
+	padding: 20px;
+      
+
+}
+.modal-content .modal-body input, textarea, select{
+   
+    font-size: 12px;    
+
+}
+.modal-content button{
+	color:#8ebebc !important;
+}
+.modal-content button:hover{
+	background-color: transparent ;
+}
+.user-photo{
+    width: 200px;
+    height: 200px;
+}
+.user-photo-small{
+    width: 150px;
+    height: 150px;
+}
