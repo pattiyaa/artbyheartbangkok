@@ -12,7 +12,7 @@
   <div class="row 200%">
     <div class="4u 12u(mobile)">
      <% unless admin_user.photo.blank? %>
-      <a href="#" class="image fit">
+      <a href=<%= edit_admin_user_path(admin_user)%> class="image fit">
         <%= image_tag( admin_user.photo.image.url, :class => "img-circle user-photo" )%>
       </a>
       <%end%>
@@ -20,7 +20,7 @@
     <div class="7u 12u(mobile)">
       <div class="row">
         <div class="col-xs-10">
-          <h4><%= link_to admin_user do %>
+          <h4><%= link_to edit_admin_user_path(admin_user) do %>
            <%=admin_user.name%>
            <% end %></h4>
            <p>
@@ -40,7 +40,6 @@
     </div>
   </div>
   <% end %>
-
 </div>
 </div>
 

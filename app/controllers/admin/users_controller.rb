@@ -10,6 +10,7 @@ class Admin::UsersController < ApplicationController
     @admin_users.each do |user|
      user.photo = Admin::Photo.find_by( imageable_id: user.id,imageable_type: "user")
     end
+
   end
 
   # GET /admin/users/1

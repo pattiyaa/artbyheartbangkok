@@ -1,9 +1,12 @@
-<div class="page-wrapper ">
-  <%= render :template=> '/admin/menu'%>
-  <div class="body">
-  <%= render :template=> '/admin/articles/_list'%>
-  </div>
-  <%= render :template=> '/admin/footer'%>
+<div class="breadcrumb">
+  <h3 class="title pull-left">Admin >> Articles </h3>
+  &nbsp;
+  <%= link_to new_admin_article_path do %>
+    <i class="fa fa fa-plus-circle" aria-hidden="true"></i>
+  <% end %>
 </div>
-
+<p id="notice"><%= notice %></p>
+<div class="body">
+ 	<%= render :template=> '/admin/articles/_list'%>
+</div>
 

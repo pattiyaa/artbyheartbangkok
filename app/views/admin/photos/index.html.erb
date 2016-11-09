@@ -1,6 +1,7 @@
-<section id="showphotos">
+<% content_for :title, "Gallery on server" %>
+<div id="showphotos">
     <%= render :partial => "/admin/photos/index", :locals => {:img_id => params[:img_id],:img_type =>params[:img_type], :redirectturl=>params[:redirectturl]}%>
-</section>
-<section id="addphoto">
+</div>
+<div id="addphoto">
     <%= render :template => new_admin_photo_path,:locals => {:redirectturl=>params[:redirectturl]}%>
-</section> 
+</div> 

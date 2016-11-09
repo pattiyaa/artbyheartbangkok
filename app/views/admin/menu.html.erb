@@ -2,33 +2,15 @@
 <div id="header_admin">
         <div class="top">
           <!-- Logo -->
-     <!--        <div id="logo">
-              <span class="image avatar48"><img src="images/avatar.jpg" alt="" /></span>
-              <h1 id="title">Jane Doe</h1>
-              <p>Hyperspace Engineer</p>
-            </div> -->
             <div id="users" class="4u 12u(mobile)">
             <%= render :template => '/admin/users/show_name' ,  :locals => { :admin_user=> @admin_user, :admin_user_photo=> @admin_user_photo} %>
             
             </div>
           <!-- Nav -->
             <nav id="nav">
-              <!--
-
-                Prologue's nav expects links in one of two formats:
-
-                1. Hash link (scrolls to a different section within the page)
-
-                   <li><a href="#foobar" id="foobar-link" class="icon fa-whatever-icon-you-want skel-layers-ignoreHref"><span class="label">Foobar</span></a></li>
-
-                2. Standard link (sends the user to another page/site)
-
-                   <li><a href="http://foobar.tld" id="foobar-link" class="icon fa-whatever-icon-you-want"><span class="label">Foobar</span></a></li>
-
-              -->
               <ul>
                 <li><a href="/admin" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Dashboard</span></a></li>
-                <li><a href="/admin/users" id="user-link" class="skel-layers-ignoreHref"><span class="icon fa-user">User</span></a></li>
+                <li><a href="/admin/users" id="user-link" class="skel-layers-ignoreHref"><span class="icon fa-user">Users</span></a></li>
                 <li><a href="/admin/articles" id="article-link" class="skel-layers-ignoreHref"><span class="icon fa-pencil-square-o">Articles</span></a></li>
                 <li><a href="/admin/products" id="product-link" class="skel-layers-ignoreHref"><span class="icon fa-shopping-bag">Products</span></a></li>
                 <li><a href="/" id="live-link" class="skel-layers-ignoreHref"><span class="icon fa-globe">Live website</span></a></li>

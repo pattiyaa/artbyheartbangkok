@@ -24,9 +24,11 @@
 }
 .admin a{
 	border-bottom: 0px;
+    color:black;
 }
 .admin a:hover{
 	background-color:transparent;
+    cursor: hand
 }
 .admin fieldset { 
     display: block;
@@ -40,13 +42,16 @@
 }
 .modal-content .modal-body{
 	padding: 20px;
-      
-
 }
-.modal-content .modal-body input, textarea, select{
-   
+.modal-content .modal-body input, textarea, select,legend{
     font-size: 12px;    
-
+}
+.modal-content .modal-body div .image-gallery{
+     max-height:350px;
+    overflow-y:auto;  
+}
+.modal-content .modal-body .imag-gallery .card-columns .card button{
+    padding: 0px;
 }
 .modal-content button{
 	color:#8ebebc !important;
@@ -54,6 +59,11 @@
 .modal-content button:hover{
 	background-color: transparent ;
 }
+.modal-content .card button{
+    padding:0px;
+}
+
+
 .user-photo{
     width: 200px;
     height: 200px;
@@ -61,4 +71,12 @@
 .user-photo-small{
     width: 150px;
     height: 150px;
+}
+.card-columns {
+  @include media-breakpoint-only(lg) {
+    column-count: 4;
+  }
+  @include media-breakpoint-only(xl) {
+    column-count: 5;
+  }
 }
