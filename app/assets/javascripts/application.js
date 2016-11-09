@@ -23,5 +23,5 @@
 //= require_tree .
 // Optional - turbolinks support (add = to enable)
 //= require turbolinks 
-//= require modals
 //= require bootstrap
+//= require modals

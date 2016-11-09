@@ -24,7 +24,7 @@
                 <h1><%=ff.object.title %></h1>
               </div>
               <div class="col-xs-col6">
-                <%= link_to 'Update photo', admin_photos_path(:img_id => f.object.id, :img_type => 'user',:redirectturl=> edit_admin_user_path(admin_user)), :class=>'form-actions',data: { modal: true }%>
+                <%= link_to 'Update photo', admin_photos_path(:img_id => f.object.id, :img_type => 'user',:redirectturl=> edit_admin_user_path(admin_user)), :class=>'form-actions',data: { modal: true}%>
                 
                 <%= ff.hidden_field(:title) %>
                 <%= ff.hidden_field(:image) %>
