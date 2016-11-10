@@ -2,7 +2,7 @@
   <!-- article header -->
   <section>
      <!-- cover image -->
-     <%=cl_image_tag( @admin_article.coverphoto_url ,:width => 1024, :height => 450, :crop => :fill,:class=>"img-responsive center-block" )%>
+      <a href="#" class="image featured cover"><%=cl_image_tag(@admin_article.coverphoto.image.filename,:width => 1200, :height => 550,:class=>"img-responsive center-block " )%></a>
      <header class="wrapper">
       <div class="row">
         <p class="pull-left"><%= @admin_article.category %></p>

@@ -7,21 +7,31 @@ class Admin::ArticlesController < ApplicationController
   def index
     login
     @admin_articles = Admin::Article.all
-
+    @admin_articles = getArticlesImg(@admin_articles)
+    
   end
 
   # GET /admin/articles/1
   # GET /admin/articles/1.json
   def show
+    login
+    @admin_article.coverphoto = Admin::Photo.find_by( imageable_id: @admin_article.id,imageable_type: "article_cover")
   end
 
   # GET /admin/articles/new
   def new
+    login
     @admin_article = Admin::Article.new
+    @admin_article.coverphoto = Admin::Photo.new(:title => "My photo \##{1 + (Admin::Photo.maximum(:id) || 0)}")
   end
 
   # GET /admin/articles/1/edit
   def edit
+    login
+    @admin_article.coverphoto = Admin::Photo.find_by( imageable_id: @admin_article.id,imageable_type: "article_cover")
+    if @admin_article.coverphoto.blank?
+       @admin_article.coverphoto =  Admin::Photo.new
+    end
   end
 
   # POST /admin/articles
@@ -31,7 +41,7 @@ class Admin::ArticlesController < ApplicationController
 
     respond_to do |format|
       if @admin_article.save
-        format.html { redirect_to @admin_article, notice: 'Article was successfully created.' }
+        format.html { redirect_to edit_admin_article_path(@admin_article), notice: 'Article was successfully created. Please add cover photo' }
         format.json { render :show, status: :created, location: @admin_article }
       else
         format.html { render :new }

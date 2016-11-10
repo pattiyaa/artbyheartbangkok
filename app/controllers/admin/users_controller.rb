@@ -41,13 +41,14 @@ class Admin::UsersController < ApplicationController
 
     respond_to do |format|
       if @admin_user.save
-        format.html { redirect_to @admin_user, notice: 'User was successfully created.' }
-        format.json { render :show, status: :created, location: @admin_user }
+        format.html { redirect_to edit_admin_user_path(@admin_user), notice: 'User was successfully created. Please add photo!' }
+        format.json { render :edit, status: :created, location: @admin_user }
       else
         format.html { render :new }
         format.json { render json: @admin_user.errors, status: :unprocessable_entity }
       end
     end
+
   end
 
   # PATCH/PUT /admin/users/1

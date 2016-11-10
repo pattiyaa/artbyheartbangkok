@@ -3,6 +3,6 @@ class Admin::DashboardController < ApplicationController
   
   def index
   	login
-  	@admin_articles= Admin::Article.all;
+  	
   end
 end

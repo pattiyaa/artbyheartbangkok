@@ -1,3 +1,6 @@
+body{
+    background-color: #f0f4f4 !important;
+}
 .admin .body{
 	padding: 0px 25px 25px 25px;
     
@@ -17,6 +20,9 @@
     text-align: center;
     padding: 7.5em 0 2em 0;
     cursor: default;
+}
+.admin .breadcrumb{
+    height: 47px;
 }
 .admin .title{
 	font-size: 1em;
@@ -40,8 +46,56 @@
     padding-right: 0.75em;
     border: 2px groove;
 }
+
+
+.admin .user-photo{
+    width: 200px;
+    height: 200px;
+}
+.admin .user-photo-small{
+    width: 150px;
+    height: 150px;
+}
+.admin .card-columns {
+  @include media-breakpoint-only(lg) {
+    column-count: 4;
+  }
+  @include media-breakpoint-only(xl) {
+    column-count: 5;
+  }
+}
+.admin .image.featured {
+    display: block;
+    width: 100%;
+    margin: 0;
+
+}
+.admin .image img {
+    display: block;
+    width: 100%;
+   
+}
+.admin .image.featured.cover img {
+    
+    height: 400px;
+}
+
+article.highlight .image.featured img{
+    height: 200px;
+}
+article.highlight{
+    height: 100%;
+}
+
+.card.highlight {
+    width: 288px;
+    height: 400px;
+    white-space: normal;
+}
+
+
 .modal-content .modal-body{
-	padding: 20px;
+    padding: 20px;
 }
 .modal-content .modal-body input, textarea, select,legend{
     font-size: 12px;    
@@ -54,29 +108,11 @@
     padding: 0px;
 }
 .modal-content button{
-	color:#8ebebc !important;
+    color:#8ebebc !important;
 }
 .modal-content button:hover{
-	background-color: transparent ;
+    background-color: transparent ;
 }
 .modal-content .card button{
     padding:0px;
-}
-
-
-.user-photo{
-    width: 200px;
-    height: 200px;
-}
-.user-photo-small{
-    width: 150px;
-    height: 150px;
-}
-.card-columns {
-  @include media-breakpoint-only(lg) {
-    column-count: 4;
-  }
-  @include media-breakpoint-only(xl) {
-    column-count: 5;
-  }
 }

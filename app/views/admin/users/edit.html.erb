@@ -1,16 +1,9 @@
-<div class="breadcrumb">
-  <h3 class="title pull-left">Admin >> Users >> ID: <%= @admin_user.id %> </h3>
-  &nbsp;
-  
-</div>
+<% content_for :breadcrumb_atr_1, "Admin >> Users >> ID: " %>
+<% content_for :breadcrumb_atr_2 do %>
+     <%= @admin_user.id %> 
+<% end %>
 
-<p id="notice"><%= notice %></p>
-
-<div class="body">
-
+<!-- body -->
 <%= render 'form', admin_user: @admin_user %>
 
-<%= link_to 'Show', @admin_user %> |
-<%= link_to 'Back', admin_users_path %>
-</div>
  

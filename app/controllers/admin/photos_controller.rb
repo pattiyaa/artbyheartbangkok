@@ -30,7 +30,7 @@ class Admin::PhotosController < ApplicationController
   def create
     
     if is_exist?
-      if params[:imageable_type] == 'user'
+      if params[:imageable_type] == 'user' || params[:imageable_type] == 'article_cover'
         existPhoto = Admin::Photo.find_by( imageable_id: params[:imageable_id],imageable_type: params[:imageable_type])
         unless existPhoto.blank?
           existPhoto.update_columns(imageable_id: nil,imageable_type:nil)

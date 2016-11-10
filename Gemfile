@@ -8,7 +8,7 @@ gem 'pg', '~> 0.18'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
-gem 'bootstrap-sass', '~>3.2.0'
+gem 'bootstrap-sass', '~>3.3.7'
 gem 'bootstrap', '~> 4.0.0.alpha5'
 gem 'responders'
 gem 'autoprefixer-rails'
@@ -56,7 +56,6 @@ gem 'cloudinary'
 #for blog editor
 gem 'simple_form', '~> 3.2'
 gem 'ckeditor', '~> 4.1'
-gem 'carrierwave'
 gem 'mini_magick'
 #for admin : paged tables that can be sorted on selected fields
 gem 'datagrid'
@@ -64,3 +63,4 @@ gem 'kaminari'
 gem 'activesupport', '~> 5.0', '>= 5.0.0.1'
 gem 'sass-rails'
 gem 'sprockets-rails'
+gem 'skeleton-rails'

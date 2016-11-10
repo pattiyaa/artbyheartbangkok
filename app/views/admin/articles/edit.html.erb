@@ -1,15 +1,11 @@
- <div class="page-wrapper">
- 	<%= render :template=> '/admin/menu'%>
- 	<div class="body">
-	 	<h2>Editing Admin Article</h2>
-
-	 	<%= render 'form', admin_article: @admin_article %>
-	 	<article class="action">
-	 		<div class="pull-right">
-	 			<%= link_to 'Show', @admin_article %> |
-	 			<%= link_to 'Back', admin_articles_path %>
-	 		</div>
-	 	</article>
- 	</div>
- 	<%= render :template=> '/admin/footer'%>
- </div>
+<% content_for :breadcrumb_atr_1, "Admin >> Article >> ID: " %>
+<% content_for :breadcrumb_atr_2 do %>
+     <%= @admin_article.id %> 
+<% end %>
+<!-- body -->
+<%= render 'form', admin_article: @admin_article %>
+<div class="pull-right">
+	<%= link_to 'Show', @admin_article %> |
+	<%= link_to 'Back', admin_articles_path %>
+</div>
+	 	
