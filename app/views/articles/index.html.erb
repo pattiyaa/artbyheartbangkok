@@ -1,0 +1,11 @@
+
+<div class="wrapper style1">
+	<% if @articles.blank? %>
+	<p>No articles found.</p>
+	<% end %>
+	<div class="card-columns">
+		<% @articles.each do |article| %>
+		<%= render 'articles/highlight_item', article: article, isHighlight: false %>
+		<%end%>
+	</div>
+</div>

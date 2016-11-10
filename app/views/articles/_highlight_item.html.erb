@@ -1,4 +1,8 @@
+<% if isHighlight %>
 <div class="card highlight">
+<%else%>
+<div class="card">
+<%end%>
 	<% unless article.coverphoto.blank? %>
 	<a href=<%= article_path(article) %> class="image fit">
 		<%= cl_image_tag(article.coverphoto.image.url,:width => '230px',:height=>'200px',:class=>'card-img-top',:alt => 'Card image cap') %></a>

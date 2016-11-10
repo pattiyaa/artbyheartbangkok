@@ -1,0 +1,20 @@
+<section >
+  <header>
+    <h3>You Might Also Like</h3>
+  </header>
+  <div class="row">
+    <% articles.each do |article| %>
+      <article class="4u 12u(mobile) special">
+        <a href="#" class="image featured"><%=cl_image_tag(article.coverphoto.image.filename,:width => 350, :height => 400, :crop => :fill,:class=>"img-responsive center-block" )%></a>
+        <header>
+        <h3><a href="#"><%= article.title%></a></h3>
+        </header>
+            <% if article.subtitle.size <= 100  %>
+            <p><%=article.subtitle%></p>
+            <%else%>
+            <p><%= '%1.100s...'%article.subtitle %></p>
+            <%end%>
+      </article>
+    <%end%>
+  </div>
+</section>

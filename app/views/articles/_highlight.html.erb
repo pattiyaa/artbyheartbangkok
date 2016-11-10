@@ -5,7 +5,7 @@
 <div class="reel card-deck-wrapper ">
 <div class="card-deck">
 	<% admin_articles.each do |article| %>
-		<%= render 'articles/highlight_item', article: article %>
+		<%= render 'articles/highlight_item', article: article, isHighlight: true  %>
 	<%end%>
 </div>
 </div>

@@ -2,12 +2,6 @@
 <div class="wrapper style1">
 	<div class ="container" style="width: 100%">
 		<%= render 'admin/articles/show', admin_article: @article %>
-
-		<hr />
-		<h2>Suggested articles</h2>
-		<section class="carousel">
-			<%= render :partial=> 'articles/highlight',  :locals => {admin_articles: @articles_highlight }%>
-		</section>
-
+		<%= render 'articles/suggested', articles: @articles_highlight %>
 	</div>
 </div>

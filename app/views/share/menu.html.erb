@@ -2,11 +2,13 @@
   <ul>
     <li><a href="/">Home</a></li>
     <li>
-      <a href="#">Blog</a>
+      <a href="<%= articles_path%>">Blog</a>
       <ul>
-        <li><a href="#">Articles</a></li>
-        <li><a href="#">Activities</a></li>
-        <li><a href="#">How to</a></li>
+        <li>
+            <%= link_to 'Articles',articles_path(:cat => 1)  %>
+        </li>
+        <li> <%= link_to 'Activities',articles_path(:cat => 2)  %></li>
+        <li> <%= link_to 'How to',articles_path(:cat => 3)  %></li>
       </ul>
     </li>
     <li><a href="#Therapist">Therapist</a></li>
