@@ -7,7 +7,6 @@
           <div id="Image" class="form-group">
             <%= f.fields_for :coverphoto do |ff| %>
             <div class="form-group string optional admin_article_photo">
-              
               <div class="row">
                   <label class="control-label string optional" for="admin_article_photo">Photo</label>
 
@@ -15,12 +14,12 @@
                     <%= ff.hidden_field(:title) %>
                     <%= ff.hidden_field(:image) %>
                   </div>
+                  <% unless @admin_article.coverphoto.blank? %>
                   <div class="row">
                     <a href="#" class="image featured cover"><%=cl_image_tag(@admin_article.coverphoto.image.filename,:width => 1200, :height => 550,:class=>"img-responsive center-block" )%></a>
                     <h1><%=ff.object.title %></h1>
                   </div>
-                  
-              
+                  <%end%>
             </div>
            <%end%>
           </div>

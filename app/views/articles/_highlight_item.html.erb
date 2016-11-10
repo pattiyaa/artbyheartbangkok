@@ -1,0 +1,17 @@
+<div class="card highlight">
+	<% unless article.coverphoto.blank? %>
+	<a href=<%= article_path(article) %> class="image fit">
+		<%= cl_image_tag(article.coverphoto.image.url,:width => '230px',:height=>'200px',:class=>'card-img-top',:alt => 'Card image cap') %></a>
+	<%end%>
+		<div class="card-block">
+			<h4 class="card-title"><%= link_to article.title,article_path(article) %></h4>
+			<p class="card-text">
+				<% if article.subtitle.size <= 100  %>
+				<p><%=article.subtitle%></p>
+				<%else%>
+				<p><%= '%1.100s...'%article.subtitle %></p>
+				<%end%>
+			</p>
+			<p class="card-text"><small class="text-muted"><%= getLastUpdate(article.updated_at)%></small></p>
+	</div>
+</div>

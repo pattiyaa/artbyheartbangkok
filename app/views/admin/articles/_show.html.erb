@@ -1,24 +1,29 @@
 <article  class="special">
   <!-- article header -->
-  <section>
-     <!-- cover image -->
-      <a href="#" class="image featured cover"><%=cl_image_tag(@admin_article.coverphoto.image.filename,:width => 1200, :height => 550,:class=>"img-responsive center-block " )%></a>
-     <header class="wrapper">
-      <div class="row">
-        <p class="pull-left"><%= @admin_article.category %></p>
-        <p class="pull-right"><%= @admin_article.modifydate %></p>
-      </div>
-      <div class="row">
-        <h2><%= @admin_article.title %></h2>
+  
+     <header>
+        <h2><%= admin_article.title %></h2>
         <p>
-          <%= @admin_article.subtitle %>
+          <%= admin_article.subtitle %>
         </p>
+     </header>
+     <!-- cover image -->
+     <% unless admin_article.coverphoto.blank?%>
+      <a href="#" class="image featured cover"><%=cl_image_tag(admin_article.coverphoto.image.filename,:width => 1200, :height => 550,:class=>"img-responsive center-block " )%></a>
+      <%end%>
+     <div class="title wrapper">
+      <div class="row">
+        <p class="pull-left"><%= admin_article.category %></p>
+        <p class="pull-right"><%= getLastUpdate(admin_article.updated_at)%></p>
       </div>
-    </header>
-  </section>
+      <div class="row">
+        
+      </div>
+    </div>
+  
   <!-- article body -->
   <section class="body">
-    <%= @admin_article.body.html_safe %>
+    <%= admin_article.body.html_safe %>
   </section>
 
 </br>

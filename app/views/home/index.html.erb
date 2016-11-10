@@ -1,66 +1,20 @@
-<!DOCTYPE html>
-<html>
-<head>
+<!-- header -->
+<%= render :template=> 'share/header'%>
 
-</head>
-<body class="homepage">
+<!-- Banner -->
+<section id="banner">
+  <header>
+    <h2>Welcome to <strong>Art by Heart</strong> bangkok!</h2>
+    <p>
+      พวกเราคือกลุ่มนักศิลปะบำบัด ติดตามตารางกิจกรรมและผลงานของเราได้ที่นี่ค่ะ
+    </p>
+  </header>
+</section>
 
-
-  <div id="page-wrapper">
-    <div id="header" >
-      <!-- Inner -->
-      <div class="inner">
-        <header>
-         <!--  <h1><a href="#" id="logo"><%= image_tag("logoArtbyHeart.png",size: "200x225", :alt => "Art by Heart", :class=>"img-responsive center-block" ) %></a></h1> -->
-         <h1><a href="#" id="logo"><%= cl_image_tag("Artbyheart/logoArtbyHeart.png",size: "200x225", :alt => "Sample Image", :class=>"img-responsive center-block" ) %></a></h1>
-         <hr />
-         <p>listen to your heart, release yourself with art </p>
-       </header>
-       <footer>
-        <a href="#banner" class="button circled scrolly">Start</a>
-      </footer>
-    </div>
-    <!-- Nav -->
-    <nav id="nav">
-      <ul>
-        <li><a href="#header">Home</a></li>
-        <li>
-          <a href="#">Blog</a>
-          <ul>
-            <li><a href="#">Articles</a></li>
-            <li><a href="#">Activities</a></li>
-            <li><a href="#">How to</a></li>
-                    <!-- <li>
-                      <a href="#">And a submenu &hellip;</a>
-                      <ul>
-                        <li><a href="#">Lorem ipsum dolor</a></li>
-                        <li><a href="#">Phasellus consequat</a></li>
-                        <li><a href="#">Magna phasellus</a></li>
-                        <li><a href="#">Etiam dolore nisl</a></li>
-                      </ul>
-                    </li> -->
-                  </ul>
-                </li>
-                <li><a href="#Therapist">Therapist</a></li>
-                <li><a href="right-sidebar.html">Products</a></li>
-                <li><a href="no-sidebar.html">About us</a></li>
-              </ul>
-            </nav>
-          </div>
-        </div>
-        <!-- Banner -->
-        <section id="banner">
-          <header>
-            <h2>Welcome to <strong>Art by Heart</strong> bangkok!</h2>
-            <p>
-              พวกเราคือกลุ่มนักศิลปะบำบัด ติดตามตารางกิจกรรมและผลงานของเราได้ที่นี่ค่ะ
-            </p>
-          </header>
-        </section>
-        <!-- Carousel -->
-        <section class="carousel">
-          <%= render :partial=> 'articles_hightlight',  :locals => {admin_articles: @articles_hightlight }%>
-        </section>
+<!-- Carousel -->
+<section class="carousel">
+  <%= render :partial=> 'articles/highlight',  :locals => {admin_articles: @articles_highlight }%>
+</section>
         <!-- Main -->
         <div class="wrapper style2">
 
@@ -133,40 +87,5 @@
           </section>
 
         </div>
-        <!-- Footer -->
-        <div id="footer">
-          <div class="container">
-            <div class="row">
-              <div class="12u">
-
-                <!-- Contact -->
-                <section class="contact">
-                  <header>
-                    <h3>Join us on</h3>
-                  </header>
-                  <ul class="icons">
-                    <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-                    <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-                    <li><a href="#" class="icon fa-pinterest"><span class="label">Pinterest</span></a></li>
-                    <li><a href="#" class="icon fa-map-marker "><span class="label">Pinterest</span></a></li>
-                  </ul>
-                </section>
-
-                <!-- Copyright -->
-                <div class="copyright">
-                  <ul class="menu">
-                    <li>&copy; Art by Heart Bangkok. All rights reserved.</li>
-                  </ul>
-                </div>
-
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-
-    </body>
-    </html>
+<!-- footer -->
+<%= render :template=> 'share/footer',  :locals => {admin_articles: @articles_highlight }%>

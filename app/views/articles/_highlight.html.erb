@@ -1,0 +1,11 @@
+<% if admin_articles.blank? %>
+	<p>No articles were added yet.</p>
+<% end %>
+
+<div class="reel card-deck-wrapper ">
+<div class="card-deck">
+	<% admin_articles.each do |article| %>
+		<%= render 'articles/highlight_item', article: article %>
+	<%end%>
+</div>
+</div>

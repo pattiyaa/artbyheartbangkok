@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
+  layout "plain"
   def index
-  	@articles_hightlight = Admin::Article.all
-  	@articles_hightlight = getArticlesImg(@articles_hightlight)
-  
+  	@articles_highlight = Admin::Article.where(:isToplist => true)
+  	@articles_highlight = getArticlesImg(@articles_highlight)
   end
 end

@@ -4,9 +4,11 @@
 <% @admin_articles.each do |admin_article| %>
 <div class="row">
   <div class="col-md-4">
+   <% unless admin_article.coverphoto.blank? %>
     <a href="#" class="image fit">
       <%=cl_image_tag( admin_article.coverphoto.image.url ,:width => 350, :height => 200, :crop => :fill,:class=>"img-responsive center-block" )%>
     </a>
+   <%end%>
   </div>
   <div class="col-md-6">
     <h4><%= link_to admin_article do %>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     <%= render :partial=> 'layouts/header_tag'%>
+  </head>
+  <body class="homepage">
+  	<div id="page-wrapper">
+    	<%= yield %>
+    </div>
+    <div id="modal-holder"></div> 
+    <!-- Scripts for theme-->
+    <%= render :partial=> 'layouts/javascript_tag'%>
+  </body>
+</html>

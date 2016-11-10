@@ -13,9 +13,11 @@ class ApplicationController < ActionController::Base
 	    respond_with *args, options, &blk
   	end
   	def getArticlesImg(admin_articles)
-  		admin_articles.each do |article|
-     		article.coverphoto = Admin::Photo.find_by( imageable_id: article.id,imageable_type: "article_cover")
-    	end
+      
+    		admin_articles.each do |article|
+       		article.coverphoto = Admin::Photo.find_by( imageable_id: article.id,imageable_type: "article_cover")
+      	end
+
     	return admin_articles
   	end
   	def getLastUpdate(updated_at)
@@ -32,6 +34,6 @@ class ApplicationController < ActionController::Base
   				lastupdated = diff.to_s+' mins'
   			end
   		end
-  		return lastupdated
+  		return 'Last updated ' + lastupdated +' ago'
   	end
 end
