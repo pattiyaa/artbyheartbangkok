@@ -2181,7 +2181,8 @@
 		body.homepage #header:after {
 			content: '';
 			/*background: #1C0920;*/
-			background: #EAF390;
+			/*background: #EAF390;*/ /*yellow header before render*/
+			background:#f7f5de;
 			display: block;
 			position: absolute;
 			left: 0;
